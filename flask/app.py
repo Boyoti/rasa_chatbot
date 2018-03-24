@@ -13,6 +13,7 @@ def hello_world():
 
 @app.route('/chat',methods=["POST"])
 def chat():
+    print(request.json)
     try:
         user_message = request.form["text"]
         print("This is the user message: {}".format(user_message))
