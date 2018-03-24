@@ -42,10 +42,10 @@ function showUserMessage(msg){
 }
 function sayToBot(text){
     document.getElementById("msg_input").placeholder = "Type your messages here..."
-    $.post("/chat",
+    $.get("/chat",
             {
                 //csrfmiddlewaretoken:csrf,
-                text:text,
+                question:text,
             },
             function(jsondata, status){
                 if(jsondata["status"]=="success"){
