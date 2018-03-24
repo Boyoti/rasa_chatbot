@@ -96,7 +96,7 @@ body {
 }
 .messages .message.right .text_wrapper::after, .messages .message.right .text_wrapper::before {
   left: 100%;
-  border-left-color: #c7eafc;
+  border-left-color: #0000FF;
 }
 .messages .message.right .text {
   color: #fff;
