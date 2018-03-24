@@ -33,3 +33,6 @@ testing out the rasa chatbot
 The chatbot GUI can be accessed at http://localhost:5005/ and interacts with the flask API which then sends the text to Rasa for intent classification and then the bot responds with the appropriate response.
 
 ![Screenshot](screenshot.JPG?raw=true)
+
+# Demo
+You can demo this at http://chat.btotharye.com:5005/
