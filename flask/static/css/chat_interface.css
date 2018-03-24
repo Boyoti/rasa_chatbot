@@ -99,7 +99,7 @@ body {
   border-left-color: #c7eafc;
 }
 .messages .message.right .text {
-  color: #45829b;
+  color: #fff;
 }
 .messages .message.appeared {
   opacity: 1;
