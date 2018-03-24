@@ -2,8 +2,6 @@ from flask import Flask
 from flask import render_template,jsonify,request
 import requests
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
 app = Flask(__name__)
 
@@ -15,7 +13,7 @@ def hello_world():
 
 @app.route('/chat')
 def chat_response():
-    rasa_host = os.getenv("RASA_HOST")
+    rasa_host = os.environ("RASA_HOST")
     if 'question' in request.args:
         print(request.args['question'])
         user_message = request.args['question']
