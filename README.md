@@ -4,7 +4,7 @@ testing out the rasa chatbot
 # To Use
 1. Clone the repo - `git clone https://github.com/lackeyai/rasa_chatbot.git`
 
-2. Modify the .env file and put in your Docker IP address or the ip of where docker is installed.
+2. Copy the .env.default file to .env `cp .env.default .env` and put in your Docker IP address or the ip of where docker is installed.
 
 3. Run the following command to bring up rasa and the flask instance - `docker-compose up -d --build --remove-orphans`
 
