@@ -13,7 +13,7 @@ def hello_world():
     return 'Flask Dockerized'
 
 @app.route('/chat')
-def chat():
+def chat_response():
     if 'question' in request.args:
         print(request.args['question'])
         user_message = request.args['question']
