@@ -6,7 +6,7 @@ services:
     container_name: rasa
     image: rasa/rasa_nlu:latest-spacy
     ports:
-      - '5005:5000'
+      - '5005:5005'
 
   flask-chatbot:
     container_name: flask-chatbot
