@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return 'Flask Dockerized'
+def index():
+    return render_template('index.html')
 
 @app.route('/chat')
 def chat_response():
@@ -25,7 +25,11 @@ def chat_response():
         response = response.json()
         intent = response["intent"]
         print("Intent {}".format(intent))
-        return jsonify({"status": "success", "response": intent})
+        if intent['name'] == 'help':
+            response_text = "Sure I can help you"
+        else:
+            response_text = "Sorry I don't understand"
+        return jsonify({"status": "success", "response": response_text})
     else:
         return jsonify({"status": "failed", "response": "could not find question"})
 
