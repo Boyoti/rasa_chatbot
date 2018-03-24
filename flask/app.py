@@ -14,12 +14,12 @@ def hello_world():
 
 @app.route('/chat',methods=["POST"])
 def chat():
-    print(request.json)
+    print(request.form)
     try:
         user_message = request.form["text"]
         print("This is the user message: {}".format(user_message))
         print("The rasa host is: {}".format(rasa_host))
-        response = requests.get("http://localhost:5000/parse",params={"q":user_message, "project": "chatbot"})
+        response = requests.get("http://" + rasa_host + ":5000/parse",params={"q":user_message, "project": "chatbot"})
         print(response.json())
         response = response.json()
         intent = response["intent"]
