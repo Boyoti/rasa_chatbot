@@ -2,11 +2,12 @@ from flask import Flask
 from flask import render_template,jsonify,request
 import requests
 import os
-app = Flask(__name__)
 from dotenv import load_dotenv
 load_dotenv()
 
+app = Flask(__name__)
 rasa_host = os.getenv("docker_host_ip")
+
 @app.route('/')
 def hello_world():
     return 'Flask Dockerized'
@@ -18,7 +19,7 @@ def chat():
         user_message = request.form["text"]
         print("This is the user message: {}".format(user_message))
         print("The rasa host is: {}".format(rasa_host))
-        response = requests.get("http://" + rasa_host + ":5000/parse",params={"q":user_message, "project": "chatbot"})
+        response = requests.get("http://localhost:5000/parse",params={"q":user_message, "project": "chatbot"})
         print(response.json())
         response = response.json()
         intent = response["intent"]
