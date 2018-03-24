@@ -18,7 +18,8 @@ def chat():
     user_message = request.form["text"]
     print("This is the user message: {}".format(user_message))
     print("The rasa host is: {}".format(rasa_host))
-    response = requests.get("http://{}:5000/parse",params={"q":user_message, "project": "chatbot"}.format(rasa_host))
+    url = "http://{}:5000/parse".format(rasa_host)
+    response = requests.get(url,params={"q":user_message, "project": "chatbot"})
     print(response.json())
     response = response.json()
     intent = response["intent"]
