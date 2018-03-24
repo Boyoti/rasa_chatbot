@@ -23,6 +23,7 @@ def chat_response():
         response = requests.get(url,params={"q":user_message, "project": "chatbot"})
         print(response.json())
         response = response.json()
+        print(response)
         intent = response["intent"]
         print("Intent {}".format(intent))
         if intent['name'] == 'help':
