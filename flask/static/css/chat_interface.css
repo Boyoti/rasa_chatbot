@@ -86,11 +86,11 @@ body {
   color: #c48843;
 }
 .messages .message.right .avatar {
-  background-color: #fdbf68;
+  background-color: #0000FF;
   float: right;
 }
 .messages .message.right .text_wrapper {
-  background-color: #c7eafc;
+  background-color: #0000FF;
   margin-right: 20px;
   float: right;
 }
