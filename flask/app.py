@@ -24,6 +24,7 @@ def chat():
         return jsonify({"status": "success", "response": intent})
     except Exception as e:
         print(e)
+        return jsonify({"status": "failure", "response": e})
 
 
 if __name__ == '__main__':
