@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+
+  rasa:
+    container_name: rasa
+    image: rasa/rasa_nlu:latest-spacy
+    ports:
+      - '5005:5000'
+
+  flask-chatbot:
+    container_name: flask-chatbot
+    build:
+      context: flask/.
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    environment:
+     - docker_host_ip=${docker_host_ip}
