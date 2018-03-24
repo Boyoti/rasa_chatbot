@@ -14,14 +14,18 @@ testing out the rasa chatbot
 
 5. Test the flask api to ensure it is routing calls to Rasa by calling the below:
 
-`import requests
+```python
+ import requests
  question = 'can you help me'
  url = 'http://10.0.0.218:5005/chat?question=can you help me'
  r = requests.get(url)
- r.json()`
+ r.json()
+ ```
  
  This should give you something similiar to the below if you used my training model:
  
- `{'response': {'confidence': 0.7104371716052071, 'name': 'help'},
- 'status': 'success'}`
+ ```json
+ {'response': {'confidence': 0.7104371716052071, 'name': 'help'},
+ 'status': 'success'}
+ ```
 
