@@ -27,6 +27,8 @@ def chat_response():
         print("Intent {}".format(intent))
         if intent['name'] == 'help':
             response_text = "Sure I can help you"
+        if intent['name'] == 'greet':
+            response_text = "Hello, how may I help?"
         else:
             response_text = "Sorry I don't understand"
         return jsonify({"status": "success", "response": response_text})
