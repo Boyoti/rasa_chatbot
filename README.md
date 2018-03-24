@@ -21,11 +21,15 @@ testing out the rasa chatbot
  r = requests.get(url)
  r.json()
  ```
- 
+
  This should give you something similiar to the below if you used my training model:
- 
+
  ```json
  {'response': {'confidence': 0.7104371716052071, 'name': 'help'},
  'status': 'success'}
  ```
 
+# GUI
+The chatbot GUI can be accessed at http://localhost:5005/ and interacts with the flask API which then sends the text to Rasa for intent classification and then the bot responds with the appropriate response.
+
+![Screenshot](screenshot.JPG?raw=true)
