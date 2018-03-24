@@ -15,7 +15,7 @@ def hello_world():
 
 @app.route('/chat')
 def chat_response():
-    rasa_host = os.getenv("docker_host_ip")
+    rasa_host = os.getenv("RASA_HOST")
     if 'question' in request.args:
         print(request.args['question'])
         user_message = request.args['question']

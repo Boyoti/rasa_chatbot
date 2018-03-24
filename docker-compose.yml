@@ -15,5 +15,4 @@ services:
       dockerfile: Dockerfile
     ports:
       - '5005:5005'
-    environment:
-      - docker_host_ip=${docker_host_ip}
+    env_file: ../.env
