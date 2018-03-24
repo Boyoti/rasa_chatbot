@@ -15,7 +15,7 @@ def hello_world():
 def chat():
     try:
         user_message = request.form["text"]
-        print(user_message)
+        print("This is the user message: {}".format(user_message))
         response = requests.get("http://" + rasa_host + ":5005/parse",params={"q":user_message, "project": "chatbot"})
         print(response.json())
         response = response.json()
