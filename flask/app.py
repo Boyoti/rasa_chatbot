@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template,jsonify,request
 import requests
 import os
+from responses import *
 
 app = Flask(__name__)
 
@@ -29,9 +30,9 @@ def chat_response():
         if intent['name'] == 'help':
             response_text = "Sure I can help you"
         elif intent['name'] == 'greet':
-            response_text = "Hello, how may I help?"
+            response_text = greeting()
         elif intent['name'] == 'goodbye':
-            response_text = "Goodbye, have a good day."
+            response_text = goodbye()
         else:
             response_text = "Sorry I don't understand"
         return jsonify({"status": "success", "response": response_text})
