@@ -10,7 +10,7 @@ testing out the rasa chatbot
 
 4. Send a curl command to your new Rasa instance to train it, in this example I'm using my own training example hosted on github but this can be any training file you have already created:
 
-`curl 'https://raw.githubusercontent.com/Geeked-Out-Solutions/patreon-rasa-model/master/data/bot-model.json' | curl --request OST --header 'content-type: application/json' -d@- --url '0.0.0.0:5000/train?project=chatbot'` - **Make sure to replace 0.0.0.0 with your docker ip**
+`curl 'https://raw.githubusercontent.com/lackeyai/bot-training-standard/master/data/bot-model.json' | curl --request OST --header 'content-type: application/json' -d@- --url '0.0.0.0:5000/train?project=chatbot'` - **Make sure to replace 0.0.0.0 with your docker ip**
 
 5. Test the flask api to ensure it is routing calls to Rasa by calling the below:
 
