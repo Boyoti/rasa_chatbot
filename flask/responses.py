@@ -11,5 +11,5 @@ def goodbye():
     return random.choice(goodbye_response)
 
 def about():
-    about_response = ["Hello I am Lackey AI, a natural language processing bot, used as a demo currently to test out Rasa functionality."]
+    about_response = ["Hello I am Lackey AI, a natural language processing bot."]
     return about_response
