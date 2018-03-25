@@ -33,6 +33,8 @@ def chat_response():
             response_text = greeting()
         elif intent['name'] == 'goodbye':
             response_text = goodbye()
+        elif intent['name'] == 'about':
+            response_text = about()
         else:
             response_text = "Sorry I don't understand"
         return jsonify({"status": "success", "response": response_text})
