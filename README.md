@@ -8,16 +8,14 @@ testing out the rasa chatbot
 
 3. Run the following command to bring up rasa and the flask instance - `docker-compose up -d --build --remove-orphans`
 
-4. Send a curl command to your new Rasa instance to train it, in this example I'm using my own training example hosted on github but this can be any training file you have already created:
+4. Verify you can get to the GUI at http://localhost:5005 or whatever IP docker is running at.
 
-`curl 'https://raw.githubusercontent.com/lackeyai/bot-training-standard/master/data/bot-model.json' | curl --request POST --header 'content-type: application/json' -d@- --url '0.0.0.0:5000/train?project=chatbot'` - **Make sure to replace 0.0.0.0 with your docker ip**
-
-5. Test the flask api to ensure it is routing calls to Rasa by calling the below:
+5. Test the flask api to ensure it is routing calls to Rasa by calling the below replacing the X.X.X.X with your docker IP:
 
 ```python
  import requests
  question = 'can you help me'
- url = 'http://10.0.0.218:5005/chat?question=can you help me'
+ url = 'http://X.X.X.X:5005/chat?question=can you help me'
  r = requests.get(url)
  r.json()
  ```
