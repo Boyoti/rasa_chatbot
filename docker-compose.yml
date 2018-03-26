@@ -4,7 +4,9 @@ services:
 
   rasa:
     container_name: rasa
-    image: rasa/rasa_nlu:latest-spacy
+    image: rasa/rasa_nlu:0.12.0a2-spacy
+    volumes:
+      - ./data/models:/app/projects
     ports:
       - '5000:5000'
 
